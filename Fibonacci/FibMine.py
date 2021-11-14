@@ -20,20 +20,26 @@ def faster_Fib(n):
 		fibC = fibA + fibB
 		fibA = fibB
 		fibB = fibC
-	return fibC
+	if n==0:
+		return 0
+	elif n==1:
+		return 1
+	else:
+		return fibC
 
-num = int(sys.argv[1])
+#num = int(sys.argv[1])
+num = int(input())
 # t = time.process_time()
 # ans = naive_FibRecurs(num)
 # print(time.process_time()-t)
 # print(ans)
 
-t = time.process_time()
-ans = fast_Fib(num)
-print(time.process_time()-t)
-print(ans)
+#t = time.process_time()
+#ans = fast_Fib(num)
+#print(time.process_time()-t)
+#print(ans)
 
-t = time.process_time()
+#t = time.process_time()
 ans = faster_Fib(num)
-print(time.process_time()-t)
+#print(time.process_time()-t)
 print(ans)
