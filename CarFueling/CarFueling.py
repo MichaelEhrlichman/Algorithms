@@ -5,6 +5,8 @@ n = int(input()) #n fueling stations
 stations = list(map(int, input().split()))
 
 def next_station(stations,tank_size):
+    if not stations:
+        return -1
     for ix,station in enumerate(stations):
         if station > tank_size:
             return ix - 1
@@ -12,8 +14,8 @@ def next_station(stations,tank_size):
 
 nstops = 0
 while d > tank_size:
-    print(d)
-    print(stations)
+    #print(d)
+    #print(stations)
     ix = next_station(stations,tank_size)
     if ix < 0:
         print(-1)
