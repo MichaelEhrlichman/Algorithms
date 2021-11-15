@@ -15,14 +15,15 @@ def EuclidGCD(a,b):  #Euclidian Algorithm
 	return EuclidGCD(b,a % b)
 
 if __name__ == '__main__':
-	a = int(sys.argv[1])
-	b = int(sys.argv[2])
+	#a = int(sys.argv[1])
+	#b = int(sys.argv[2])
+	a,b = [int(x) for x in input().split()]
 	# t = time.process_time()
 	# ans = naive_GCD(a,b)
 	# print(time.process_time() - t)
 	# print(ans)
 
-	t = time.process_time()
+	#t = time.process_time()
 	ans = EuclidGCD(a,b)
-	print(time.process_time() - t)
+	#print(time.process_time() - t)
 	print(ans)
