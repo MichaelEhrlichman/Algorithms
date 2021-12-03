@@ -1,0 +1,59 @@
+# Uses python3
+
+def sim(str1,str2):
+    minlen = min(len(str1),len(str2))
+    #print('check '+', '.join(['1' if str1[i]==str2[i] else '0' for i in range(minlen)]))
+    return sum([0 if str1[i]==str2[i] else -1 for i in range(minlen)]) - abs(len(str1)-len(str2))
+
+def get(lst):
+    if lst:
+        return lst[0]
+    else:
+        return None
+
+def edit_distance(s, t):
+    nops = 0
+    while s != t:
+        while (s and t) and get(s) == get(t):
+            del s[0]
+            del t[0]
+        print(s)
+        print(t)
+        nops += 1
+        sim_op1,sim_op2,sim_op3 = [float('-inf')]*3
+
+        #operation 1: insert s[0] into t[0]
+        t_test = [get(s)] + t
+        if get(s) == t_test[0]:
+            #print('a')
+            sim_op1 = sim( s, [get(s)] + t )
+
+        #operation 2: delete t[0]
+        test_t = t[1:]
+        if get(s) == t_test[0]:
+            #print('b')
+            sim_op2 = sim( s, t[1:] )
+
+        #operation 3: swap s[0] into t[0]
+        if s:
+            test_t = [get(s)] + t[1:]
+            if get(s) == t_test[0]:
+                #print('c')
+                sim_op3 = sim( s, [get(s)] + t[1:] )
+
+        print(sim_op1, sim_op2, sim_op3)
+        if sim_op1 >= sim_op2 and sim_op1 >= sim_op3:
+            print("op insert")
+            t = [s[0]] + t
+        elif sim_op2 >= sim_op1 and sim_op2 >= sim_op3:
+            print("op delete")
+            t = t[1:]
+        elif sim_op3 >= sim_op1 and sim_op3 >= sim_op2:
+            print("op swap")
+            t = [s[0]] + t[1:]
+    return nops
+
+if __name__ == "__main__":
+    str1 = list(input())
+    str2 = list(input())
+    print(edit_distance(str1,str2))
