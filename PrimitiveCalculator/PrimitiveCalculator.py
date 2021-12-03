@@ -1,7 +1,7 @@
 num = int(input())
 
 nops_lst = [0,1,1]
-seq_lst = [[1],[1],[1,2]]
+seq_lst = [[1],[1,2],[1,3]]
 
 while len(nops_lst) < num:
     new_num = len(nops_lst)+1
@@ -19,7 +19,7 @@ while len(nops_lst) < num:
         seq_lst.append(seq_lst[new_num//2-1]+[new_num])
     elif nops_b <= nops_a and nops_b <= nops_c:
         nops_lst.append(nops_b)
-        seq_lst.append(seq_lst[new_num//3]-1+[new_num])
+        seq_lst.append(seq_lst[new_num//3-1]+[new_num])
     elif nops_c <= nops_a and nops_c <= nops_b:
         nops_lst.append(nops_c)
         seq_lst.append(seq_lst[-1]+[new_num])
