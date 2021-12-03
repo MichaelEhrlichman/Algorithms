@@ -16,10 +16,10 @@ while len(nops_lst) < num:
 
     if nops_a <= nops_b and nops_a <= nops_c:
         nops_lst.append(nops_a)
-        seq_lst.append(seq_lst[new_num//2]+[new_num])
+        seq_lst.append(seq_lst[new_num//2-1]+[new_num])
     elif nops_b <= nops_a and nops_b <= nops_c:
         nops_lst.append(nops_b)
-        seq_lst.append(seq_lst[new_num//3]+[new_num])
+        seq_lst.append(seq_lst[new_num//3]-1+[new_num])
     elif nops_c <= nops_a and nops_c <= nops_b:
         nops_lst.append(nops_c)
         seq_lst.append(seq_lst[-1]+[new_num])
