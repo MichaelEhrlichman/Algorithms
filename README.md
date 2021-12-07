@@ -1,2 +1,2 @@
 # Algorithms
-My work from the Algorithms Toolbox course.  All solutions presented here met 100% of the test cases.
+My own solutions to the problems in the Algorithms Toolbox course.
