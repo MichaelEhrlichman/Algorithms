@@ -41,4 +41,3 @@ Week 6
 1. [Given n gold bars of various weights, find maximum that can fit in a knapsack of some max weight](KnapsackGoldBars)
 2. [Partition n items of various value equally among 3 friends](PartitionSouvenirs)
 3. [Add parentheses to arithmetic expression to maximize its value](PlacingParentheses)
-4. 
